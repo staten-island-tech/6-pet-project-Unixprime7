@@ -18,3 +18,7 @@ class pet:
     def therapy(self, motivation_to_live):
         motivation_to_live += 10
         print("You're pet underwent therapy and is no longer emo!  It gained 10 motivation_to_live points!")
+    def feed(self, hungriness):
+        hungriness += 10
+        foods = ["dead_rat", "moldy_cheese", "monkey_toenails"]
+        print("You're pet ate some", foods[random.randit(0,2)], "and ")
