@@ -30,4 +30,13 @@ class pet:
             print("Guess what, your pet was too old and decided life was for noobs!")
             return age, joy, smelliness, motivation_to_live, hungriness
         elif joy == 0:
-            print("Your pet ")
+            print("Imagine not playing with your pet lol, it died btw")
+            return age, joy, smelliness, motivation_to_live, hungriness
+        elif smelliness == 150:
+            print("'A wise pet is one that realizes showering is for the weak' - Your dead pet")
+            return age, joy, smelliness, motivation_to_live, hungriness
+        elif motivation_to_live == 0:
+            print("Unfortunately, your pet has become as heart-breakingly miserable and dead inside as Mr. Whalen, and died while eating a tub of Ben & Jerries on a couch watching anime")
+            return age, joy, smelliness, motivation_to_live, hungriness
+        elif hungriness == 150:
+            print("As you can see, your pet has literally had all of its tissue, ligaments, and muscle disintegrate from the lack of ")
