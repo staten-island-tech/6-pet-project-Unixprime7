@@ -51,7 +51,7 @@ class pet:
         {'joy': self.joy},
         {'smelliness': self.smelliness},
         {'motivation to live': self.motivation_to_live},
-        {'hungriness': self.hungriness},
+        {'hungriness': self.hungriness}
         ]
         return stats
         
@@ -73,9 +73,9 @@ while dead == False:
         user_pet.therapy()
     elif action == "f":
         user_pet.feed()
-    user_pet.day_pass
-    print(user_pet.stats)
-    if user_pet.death == "dead":
+    user_pet.day_pass()
+    print(user_pet.stats())
+    if user_pet.death() == "dead":
         dead == True
     if dead == False:
         print("Congrats, your pet has lived to see another day!")
