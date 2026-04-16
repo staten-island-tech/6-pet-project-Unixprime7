@@ -54,6 +54,23 @@ class pet:
         {'hungriness': self.hungriness}
         ]
         return stats
+    def statreset(self):
+        if joy < 0:
+            joy = 0
+        if joy > 20:
+            joy = 20
+        if joy < 0:
+            joy = 0
+        if joy > 20:
+            joy = 20
+        if joy < 0:
+            joy = 0
+        if joy > 20:
+            joy = 20
+        if joy < 0:
+            joy = 0
+        if joy > 20:
+            joy = 20
         
 pet_name = input("What do you want to name your pet? ")
 user_pet = pet(pet_name, 0, 10, 10, 10, 10)
