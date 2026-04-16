@@ -20,7 +20,7 @@ class pet:
         print(self.name, "underwent therapy and is no longer emo!  It gained 10 motivation_to_live points!")
     def feed(self):
         self.hungriness -= 10
-        foods = ["dead_rat", "moldy_cheese", "monkey_toenails"]
+        foods = ["dead rat", "moldy cheese", "monkey toenails"]
         print(self.name, "ate some", foods[random.randint(0,2)], "and lost 10 hungriness points!")
     def day_pass(self):
         self.age += 1
@@ -43,7 +43,7 @@ class pet:
             print("Unfortunately,", self.name, "has become as heart-breakingly miserable and dead inside as Mr. Whalen, and died while eating a tub of Ben & Jerries on a couch watching anime")
             return "dead"
         elif self.hungriness >= 20:
-            junk = ['a pencil_case', "a laundry_basket", "Eva's foot"]
+            junk = ['a pencil case', "a laundry basket", "Eva's foot"]
             print(self.name, "was so desperate it started chewing on", junk[random.randit(0,2)], "before it contracted into a skeleton.  Shame on you.")
     def stats(self):
         stats = [
@@ -76,7 +76,7 @@ while dead == False:
     user_pet.day_pass()
     print(user_pet.stats())
     if user_pet.death() == "dead":
-        dead == True
+        dead = True
     if dead == False:
         print("Congrats, your pet has lived to see another day!")
 
