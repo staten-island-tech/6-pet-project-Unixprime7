@@ -21,7 +21,7 @@ class pet:
     def feed(self):
         self.hungriness -= 10
         foods = ["dead_rat", "moldy_cheese", "monkey_toenails"]
-        print(self.name, "ate some", foods[random.randit(0,2)], "and lost 10 hungriness points!")
+        print(self.name, "ate some", foods[random.randint(0,2)], "and lost 10 hungriness points!")
     def day_pass(self):
         self.age += 1
         self.joy -= 2
@@ -30,28 +30,31 @@ class pet:
         self.hungriness += 2
         print(self.name, "is getting old...a day has passed!")
     def death(self):
-        if self.age == 20:
+        if self.age >= 20:
             print("Guess what,", self.name, "was too old and decided life was for noobs!")
             return "dead"
-        elif self.joy == 0:
+        elif self.joy <= 0:
             print("Imagine not playing with", self.name, "lol, it died btw")
             return "dead"
-        elif self.smelliness == 20:
+        elif self.smelliness >= 20:
             print("'A wise pet is one that realizes showering is for the weak' - Your dead pet")
             return "dead"
-        elif self.motivation_to_live == 0:
+        elif self.motivation_to_live <= 0:
             print("Unfortunately,", self.name, "has become as heart-breakingly miserable and dead inside as Mr. Whalen, and died while eating a tub of Ben & Jerries on a couch watching anime")
             return "dead"
-        elif self.hungriness == 20:
+        elif self.hungriness >= 20:
             junk = ['a pencil_case', "a laundry_basket", "Eva's foot"]
             print(self.name, "was so desperate it started chewing on", junk[random.randit(0,2)], "before it contracted into a skeleton.  Shame on you.")
     def stats(self):
-        print(f"{self.name}'s current stats:")
-        print(f"Age: {self.age}")
-        print(f"Joy: {self.joy}")
-        print(f"Smelliness: {self.smelliness}")
-        print(f"Motiviation to Live: {self.motivation_to_live}")
-        print(f"Hungriness: {self.hungriness}")
+        stats = [
+        {'age': self.age},
+        {'joy': self.joy},
+        {'smelliness': self.smelliness},
+        {'motivation to live': self.motivation_to_live},
+        {'hungriness': self.hungriness},
+        ]
+        return stats
+        
 pet_name = input("What do you want to name your pet? ")
 user_pet = pet(pet_name, 0, 10, 10, 10, 10)
 print("Here are the rules:  You can do 1 action each day to try to keep your pet alive.  Once you reach 0 Joy, 0 Motivation to Live, 20 Smelliness, or 20 Hungriness, you DIE! Enjoy :)")
@@ -71,7 +74,7 @@ while dead == False:
     elif action == "f":
         user_pet.feed()
     user_pet.day_pass
-    user_pet.stats
+    print(user_pet.stats)
     if user_pet.death == "dead":
         dead == True
     if dead == False:
