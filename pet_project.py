@@ -1,5 +1,11 @@
 import random
 
+def space():
+    print("")
+def spacein():
+    x = input("")
+    return x
+
 class pet:
     def __init__(self, name, age, joy, smelliness, motivation_to_live, hungriness):
         self.name = name
@@ -55,33 +61,36 @@ class pet:
         ]
         return stats
     def statreset(self):
-        if joy < 0:
-            joy = 0
-        if joy > 20:
-            joy = 20
-        if joy < 0:
-            joy = 0
-        if joy > 20:
-            joy = 20
-        if joy < 0:
-            joy = 0
-        if joy > 20:
-            joy = 20
-        if joy < 0:
-            joy = 0
-        if joy > 20:
-            joy = 20
+        if self.joy < 0:
+            self.joy = 0
+        if self.joy > 20:
+            self.joy = 20
+        if self.smelliness < 0:
+            self.smelliness = 0
+        if self.smelliness > 20:
+            self.smelliness = 20
+        if self.motivation_to_live < 0:
+            self.motivation_to_live = 0
+        if self.motivation_to_live > 20:
+            self.motivation_to_live = 20
+        if self.hungriness < 0:
+            self.hungriness = 0
+        if self.hungriness > 20:
+            self.hungriness = 20
         
 pet_name = input("What do you want to name your pet? ")
 user_pet = pet(pet_name, 0, 10, 10, 10, 10)
 print("Here are the rules:  You can do 1 action each day to try to keep your pet alive.  Once you reach 0 Joy, 0 Motivation to Live, 20 Smelliness, or 20 Hungriness, you DIE! Enjoy :)")
 dead = False
+space()
 while dead == False:
     print("Which action would you like to do? (Case sensitive: Lowercase only)")
+    space()
     print("[P]lay (+10 Joy)")
     print("[W]ash (-10 Smelliness)")
     print("[T]herapy (+10 Moitivation to Live)")
-    action = input("[F]eed (-10 Hungriness) ")
+    print("[F]eed (-10 Hungriness)")
+    action = spacein()
     if action == "p":
         user_pet.play()
     elif action == "w":
@@ -90,10 +99,13 @@ while dead == False:
         user_pet.therapy()
     elif action == "f":
         user_pet.feed()
+    user_pet.statreset()
     user_pet.day_pass()
-    print(user_pet.stats())
+    space()
+    print("Pet Stats:", user_pet.stats())
+    space()
     if user_pet.death() == "dead":
         dead = True
     if dead == False:
         print("Congrats, your pet has lived to see another day!")
-
+    space()
